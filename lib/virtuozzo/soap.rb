@@ -386,8 +386,8 @@ module Virtuozzo
       #
       def establish_session
         login_opts = {
-          :name => Base64.encode64(@username),
-          :password => Base64.encode64(@password),
+          :name => Base64.encode64(@username).gsub("\n",''),
+          :password => Base64.encode64(@password).gsub("\n",''),
           :realm => @realm
         }
 
