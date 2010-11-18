@@ -1,0 +1,15 @@
+= TODO
+
+== 1.0.0
+
+* Implement a better interface for Virtuozzo::SOAP::Connection as it deals 
+  with the underlying drivers.
+* Full YARD documentation coverage
+* Full rspec coverage
+
+== 1.1.0
+* Make independent of SOAP4R gem.
+* Make independent of echoe gem
+
+== 1.2.0
+* Implement XML API interface

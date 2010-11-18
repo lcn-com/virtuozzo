@@ -1,0 +1,124 @@
+= CHANGELOG
+
+== 0.7.0
+
+* Rename all drivers, type modules, and mapping registry modules with SOAP 
+  interface names.
+* Implemented rudimentary spec suite for above listed refactor.
+* Updated yard:docs task
+* Added spec task
+
+== 0.6.1
+
+* Fixed some bugs in type modules
+* Started implementing spec suite
+
+== 0.6.0
+
+* Implemented env_samplem interface.
+* Implemented alertm interface.
+* Implemented authm interface.
+* Implemented backupm interface.
+* Implemented computerm interface.
+* Implemented server_group interface.
+* Implemented event_log interface.
+* Implemented filer interface.
+* Implemented firewallm interface
+* Implemented licensem interface
+* Implemented mailer interface
+* Implemented op_log interface
+* Implemented perf_mon interface
+* Implemented res_log interface
+* Implemented resourcem interface
+* Implemented scheduler interface
+* Implemented servicem interface
+* Implemented userm interface
+
+== 0.5.1 to 0.5.3
+
+* Minor bug fixes and documentation revisions.
+
+== 0.5.0 "Jill" 2008-11-13
+
+* Expanded documentation for Virtuozzo::SOAP::Connection class.
+* Expanded documentation for Virtuozzo::SOAP::HeaderHandler class.
+* Implemented YARD for documentation via tasks/yard.rake
+* Refactored Virtuozzo::SOAP::HeaderHandler into separate file.
+
+== 0.4.0 "Jack" 2008-11-13
+
+* Refactored drivers to use concise naming (i.e. Session instead of 
+  SessionDriver)
+* HeaderHandler now support all relevant attributes and elements for outbound
+  messages.
+
+== 0.3.0 "Tiny Tim" 2008-11-12
+
+* Refactored the driver types into the Virtuozzo::SOAP::Types module.
+
+== 0.2.0 "Little John" 2008-11-12
+
+* Refactored the mapping registries used by all the drivers into a single 
+  module under Virtuozzo::SOAP::MappingRegistries with individual modules for 
+  each driver.
+
+== 0.1.1 "Big Boy Busted" 2008-11-12
+
+* Fixed a bunch of errors in the generate code from wsdl2ruby and resolved 
+  some oddness in the Connection#initialize methods implementation.
+* Basic operations work!
+
+== 0.1.0 "Big Boy" 2008-11-12
+
+* After finding a bug in the way Virtuozzo handles parsing of SOAP headers
+  it makes SOAP the more viable option for quick implementation. Conducting 
+  major refactoring to implement SOAP API.
+* And, holy smoke, we renamed the project. The new project name is 
+  +virtuozzo+. The reasons is because it clarifies what this is an 
+  implementation of and for.
+* Supports VZLsessionm interface via SessionDriver.
+* Supports VZAenvnm interface via EnvironmentDriver.
+* Supports VZApackagem interface via TemplateDriver.
+* Supports VZArelocator interface via RelocatorDriver.
+* Supports VZAdevm interface via DeviceDriver.
+* Supports VZAnetworkm interface via NetworkDriver.
+* Supports VZAproc_info interface via ProcessInfoDriver.
+* Supports VZAup2date interface via Up2dateDriver.
+* Supports VZAsupport interface via SupportDriver.
+
+== 0.0.4 "System Overload" 2008-11-06
+
+* Implemented everything from the system target along with its necessary
+  complex types. Few things are documented as "No plans to implement" and
+  the system target stuff to handle subscribing and unsubscribing to alerts
+  is being put off.
+
+== 0.0.3 "Bastard Grandson of Timmy" 2008-11-05
+
+* Implemented ROXML for complex types and messages.
+* Dropping the idea that this library should implement a client itself.
+* Dropping method based interface for now, implementations will need to
+  explicitly craft their own messages.
+* system/login call and response is implemented.
+* vzaenvm/get_list call and response is implemented.
+* Complex type env_statusType implemented as EnvStatus.
+* Complex type tokenType implemented as Token.
+
+== 0.0.2 "Son of Timmy" 2008-10-29
+
+* Stripped all the SOAP interface code out. (Even handcrafting the packets was
+  horribly broken. Besides, SOAP sucks anyways.)
+* Refactored all the calls into methods instead of classes. This should make
+  things a little simpler. All the methods return instances of RequestMessage
+  so there shouldn't be much change for the actual socket client 
+  implementation.
+
+== 0.0.1 "Timmy" 2008-10-28
+
+* Basic methods implemented for XML API interaction in 
+  VZAgent::XML::Connection.
+* Basic methods implemented for SOAP API interaction in 
+  VZAgent::SOAP::Connection.
+* Login message classes implemented for +system+ and +sessionm+ targets.
+* Generic RequestMessage class implemented.
+* Basic constants and errors defined.
