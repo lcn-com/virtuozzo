@@ -405,7 +405,7 @@ module Virtuozzo
         sessionm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'sessionm')
         envm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzaenvm')
         packagem.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzapackagem')
-        relocator.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzaprelocator')
+        relocator.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzarelocator')
         devm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzadevm')
         networkm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzanetworkm')
         proc_info.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzaproc_info')
