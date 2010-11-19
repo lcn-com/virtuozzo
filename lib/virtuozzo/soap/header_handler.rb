@@ -44,45 +44,45 @@ module Virtuozzo
       #
       def initialize(opts = {})
         @elem_options = {
-          :session => opts[:session] || nil,
-          :target => opts[:target] || nil,
-          :cookie => opts[:cookie] || nil,
-          :dst => opts[:dst] || nil,
+          :session  => opts[:session] || nil,
+          :target   => opts[:target] || nil,
+          :cookie   => opts[:cookie] || nil,
+          :dst      => opts[:dst] || nil,
         }
 
         @attr_options = {
-          :id => opts[:id] || nil,
-          :priority => opts[:priority] || nil,
-          :time => opts[:time] || nil,
-          :progress => opts[:progress] || nil,
-          :log => opts[:log] || nil,
-          :timeout => opts[:timeout] || nil
+          :id       => opts[:id]        || nil,
+          :priority => opts[:priority]  || nil,
+          :time     => opts[:time]      || nil,
+          :progress => opts[:progress]  || nil,
+          :log      => opts[:log]       || nil,
+          :timeout  => opts[:timeout]   || 5
         }
 
         super(XSD::QName.new(NAMESPACE, 'packet_header'))
 
-        @session_elem = XSD::QName.new(NAMESPACE, 'session')
-        @target_elem = XSD::QName.new(NAMESPACE, 'target')
-        @cookie_elem = XSD::QName.new(NAMESPACE, 'cookie')
-        @dst_elem = XSD::QName.new(NAMESPACE, 'dst')
-        @dst_host_elem = XSD::QName.new(NAMESPACE, 'host')
+        @session_elem   = XSD::QName.new(NAMESPACE, 'session')
+        @target_elem    = XSD::QName.new(NAMESPACE, 'target')
+        @cookie_elem    = XSD::QName.new(NAMESPACE, 'cookie')
+        @dst_elem       = XSD::QName.new(NAMESPACE, 'dst')
+        @dst_host_elem  = XSD::QName.new(NAMESPACE, 'host')
       end
 
       def on_simple_outbound
         hdr = {}
 
         hdr.merge!({'xmlattr_version' => Virtuozzo::PROTOCOL_VERSION})
-        hdr.merge!({'xmlattr_id' => @attr_options[:id].to_s}) unless @attr_options[:id].nil?
+        hdr.merge!({'xmlattr_id' => @attr_options[:id].to_s})             unless @attr_options[:id].nil?
         hdr.merge!({'xmlattr_priority' => @attr_options[:priority].to_s}) unless @attr_options[:priority].nil?
-        hdr.merge!({'xmlattr_time' => @attr_options[:time].to_s}) unless @attr_options[:time].nil?
-        hdr.merge!({'xmlattr_progress' => "on"}) unless @attr_options[:progress].nil?
-        hdr.merge!({'xmlattr_log' => "on"}) unless @attr_options[:log].nil?
-        hdr.merge!({'xmlattr_timeout' => @attr_options[:timeout].to_s}) unless @attr_options[:timeout].nil?
+        hdr.merge!({'xmlattr_time' => @attr_options[:time].to_s})         unless @attr_options[:time].nil?
+        hdr.merge!({'xmlattr_progress' => "on"})                          unless @attr_options[:progress].nil?
+        hdr.merge!({'xmlattr_log' => "on"})                               unless @attr_options[:log].nil?
+        hdr.merge!({'xmlattr_timeout' => @attr_options[:timeout].to_s})   unless @attr_options[:timeout].nil?
 
-        hdr.merge!({@session_elem => @elem_options[:session]}) unless @elem_options[:session].nil?
-        hdr.merge!({@target_elem => @elem_options[:target]}) unless @elem_options[:target].nil? || @elem_options[:target] == 'system'
-        hdr.merge!({@cookie_elem => @elem_options[:cookie]}) unless @elem_options[:cookie].nil?
-        hdr.merge!({@dst_elem => {@dst_host_elem => @elem_options[:dst]}}) unless @elem_options[:dst].nil?
+        hdr.merge!({@session_elem => @elem_options[:session]})              unless @elem_options[:session].nil?
+        hdr.merge!({@target_elem => @elem_options[:target]})                unless @elem_options[:target].nil? || @elem_options[:target] == 'system'
+        hdr.merge!({@cookie_elem => @elem_options[:cookie]})                unless @elem_options[:cookie].nil?
+        hdr.merge!({@dst_elem => {@dst_host_elem => @elem_options[:dst]}})  unless @elem_options[:dst].nil?
 
         return hdr
       end

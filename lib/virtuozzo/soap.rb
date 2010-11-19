@@ -63,16 +63,16 @@ module Virtuozzo
       #
       def initialize(host, username, password, opts = {})
         options = {
-          :debug => false,
+          :debug      => false,
           :verify_ssl => false,
-          :realm => Virtuozzo::DEFAULT_REALM
+          :realm      => Virtuozzo::DEFAULT_REALM
         }.merge(opts)
 
         @endpoint = host
         @username = username
         @password = password
         @realm    = options[:realm]
-        
+
         @session_id = nil
 
         disable_ssl_verification unless options[:verify_ssl]
@@ -88,7 +88,7 @@ module Virtuozzo
       def sessionm
         @sessionm ||= Virtuozzo::SOAP::Drivers::Sessionm.new(@endpoint)
       end
-  
+
       ##
       # Handle for the vzaenvm interface of the Virtuozzo API.
       #
@@ -96,7 +96,7 @@ module Virtuozzo
       def envm
         @envm ||= Virtuozzo::SOAP::Drivers::Envm.new(@endpoint)
       end
-  
+
       ##
       # Handle for the vzapackagem interface of the Virtuozzo API.
       #
@@ -104,7 +104,7 @@ module Virtuozzo
       def packagem
         @packagem ||= Virtuozzo::SOAP::Drivers::Packagem.new(@endpoint)
       end
-  
+
       ##
       # Handle for the vzarelocator interface of the Virtuozzo API.
       #
@@ -112,7 +112,7 @@ module Virtuozzo
       def relocator
         @relocator ||= Virtuozzo::SOAP::Drivers::Relocator.new(@endpoint)
       end
-  
+
       ##
       # Handle for the vzadevm interface of the Virtuozzo API.
       #
@@ -120,7 +120,7 @@ module Virtuozzo
       def devm
         @devm ||= Virtuozzo::SOAP::Drivers::Devm.new(@endpoint)
       end
-  
+
       ##
       # Handle for the vzanetworkm interface of the Virtuozzo API.
       #
@@ -128,7 +128,7 @@ module Virtuozzo
       def networkm
         @networkm ||= Virtuozzo::SOAP::Drivers::Networkm.new(@endpoint)
       end
-  
+
       ##
       # Handle for the vzaproc_info interface of the Virtuozzo API.
       #
@@ -136,7 +136,7 @@ module Virtuozzo
       def proc_info
         @proc_info ||= Virtuozzo::SOAP::Drivers::ProcInfo.new(@endpoint)
       end
-  
+
       ##
       # Handle for the vzaprocessmm interface of the Virtuozzo API.
       #
@@ -144,7 +144,7 @@ module Virtuozzo
       def processm
         @processm ||= Virtuozzo::SOAP::Drivers::Processm.new(@endpoint)
       end
-  
+
       ##
       # Handle for the vzaup2date interface of the Virtuozzo API.
       #
@@ -152,7 +152,7 @@ module Virtuozzo
       def up2date
         @up2date ||= Virtuozzo::SOAP::Drivers::Up2date.new(@endpoint)
       end
-  
+
       ##
       # Handle for the vzasupport interface of the Virtuozzo API.
       #
@@ -160,7 +160,7 @@ module Virtuozzo
       def support
         @support ||= Virtuozzo::SOAP::Drivers::Support.new(@endpoint)
       end
-      
+
       ##
       # Handle for the env_samplem interface of the Virtuozzo API.
       #
@@ -168,7 +168,7 @@ module Virtuozzo
       def env_samplem
         @env_samplem ||= Virtuozzo::SOAP::Drivers::EnvSamplem.new(@endpoint)
       end
-      
+
       ##
       # Handle for the alertm interface of the Virtuozzo API.
       #
@@ -184,7 +184,7 @@ module Virtuozzo
       def authm
         @authm ||= Virtuozzo::SOAP::Drivers::Authm.new(@endpoint)
       end
-      
+
       ##
       # Handle for the backupm interface of the Virtuozzo API.
       #
@@ -192,7 +192,7 @@ module Virtuozzo
       def backupm
         @backupm ||= Virtuozzo::SOAP::Drivers::Backupm.new(@endpoint)
       end
-      
+
       ##
       # Handle for the computerm interface of the Virtuozzo API.
       #
@@ -200,7 +200,7 @@ module Virtuozzo
       def computerm
         @computerm ||= Virtuozzo::SOAP::Drivers::Computerm.new(@endpoint)
       end
-      
+
       ##
       # Handle for the event_log interface of the Virtuozzo API.
       #
@@ -208,7 +208,7 @@ module Virtuozzo
       def event_log
         @event_log ||= Virtuozzo::SOAP::Drivers::EventLog.new(@endpoint)
       end
-      
+
       ##
       # Handle for the server_group interface of the Virtuozzo API.
       #
@@ -216,7 +216,7 @@ module Virtuozzo
       def server_group
         @server_group ||= Virtuozzo::SOAP::Drivers::ServerGroup.new(@endpoint)
       end
-      
+
       ##
       # Handle for the filer interface of the Virtuozzo API.
       #
@@ -224,7 +224,7 @@ module Virtuozzo
       def filer
         @filer ||= Virtuozzo::SOAP::Drivers::Filer.new(@endpoint)
       end
-      
+
       ##
       # Handle for the firewallm interface of the Virtuozzo API.
       #
@@ -232,7 +232,7 @@ module Virtuozzo
       def firewallm
         @firewallm ||= Virtuozzo::SOAP::Drivers::Firewallm.new(@endpoint)
       end
-      
+
       ##
       # Handle for the licensem interface of the Virtuozzo API.
       #
@@ -240,7 +240,7 @@ module Virtuozzo
       def licensem
         @licensem ||= Virtuozzo::SOAP::Drivers::Licensem.new(@endpoint)
       end
-      
+
       ##
       # Handle for the mailer interface of the Virtuozzo API.
       #
@@ -248,7 +248,7 @@ module Virtuozzo
       def mailer
         @mailer ||= Virtuozzo::SOAP::Drivers::Mailer.new(@endpoint)
       end
-      
+
       ##
       # Handle for the op_log interface of the Virtuozzo API.
       #
@@ -256,7 +256,7 @@ module Virtuozzo
       def op_log
         @op_log ||= Virtuozzo::SOAP::Drivers::OpLog.new(@endpoint)
       end
-      
+
       ##
       # Handle for the perf_mon interface of the Virtuozzo API.
       #
@@ -264,7 +264,7 @@ module Virtuozzo
       def perf_mon
         @perf_mon ||= Virtuozzo::SOAP::Drivers::PerfMon.new(@endpoint)
       end
-      
+
       ##
       # Handle for the res_log interface of the Virtuozzo API.
       #
@@ -272,7 +272,7 @@ module Virtuozzo
       def res_log
         @res_log ||= Virtuozzo::SOAP::Drivers::ResLog.new(@endpoint)
       end
-      
+
       ##
       # Handle for the resourcem interface of the Virtuozzo API.
       #
@@ -280,7 +280,7 @@ module Virtuozzo
       def resourcem
         @resourcem ||= Virtuozzo::SOAP::Drivers::Resourcem.new(@endpoint)
       end
-      
+
       ##
       # Handle for the scheduler interface of the Virtuozzo API.
       #
@@ -288,7 +288,7 @@ module Virtuozzo
       def scheduler
         @scheduler ||= Virtuozzo::SOAP::Drivers::Scheduler.new(@endpoint)
       end
-      
+
       ##
       # Handle for the servicem interface of the Virtuozzo API.
       #
@@ -296,7 +296,7 @@ module Virtuozzo
       def servicem
         @servicem ||= Virtuozzo::SOAP::Drivers::Servicem.new(@endpoint)
       end
-      
+
       ##
       # Handle for the userm interface of the Virtuozzo API.
       #
@@ -312,72 +312,72 @@ module Virtuozzo
       #
       def disable_ssl_verification
         if @endpoint =~ /^https/
-          sessionm.options['protocol.http.ssl_config.verify_mode'] = nil
-          envm.options['protocol.http.ssl_config.verify_mode'] = nil
-          packagem.options['protocol.http.ssl_config.verify_mode'] = nil
-          relocator.options['protocol.http.ssl_config.verify_mode'] = nil
-          devm.options['protocol.http.ssl_config.verify_mode'] = nil
-          networkm.options['protocol.http.ssl_config.verify_mode'] = nil
-          proc_info.options['protocol.http.ssl_config.verify_mode'] = nil
-          processm.options['protocol.http.ssl_config.verify_mode'] = nil
-          up2date.options['protocol.http.ssl_config.verify_mode'] = nil
-          support.options['protocol.http.ssl_config.verify_mode'] = nil
-          env_samplem.options['protocol.http.ssl_config.verify_mode'] = nil
-          alertm.options['protocol.http.ssl_config.verify_mode'] = nil
-          authm.options['protocol.http.ssl_config.verify_mode'] = nil
-          backupm.options['protocol.http.ssl_config.verify_mode'] = nil
-          computerm.options['protocol.http.ssl_config.verify_mode'] = nil
-          event_log.options['protocol.http.ssl_config.verify_mode'] = nil
-          server_group.options['protocol.http.ssl_config.verify_mode'] = nil
-          filer.options['protocol.http.ssl_config.verify_mode'] = nil
-          firewallm.options['protocol.http.ssl_config.verify_mode'] = nil
-          licensem.options['protocol.http.ssl_config.verify_mode'] = nil
-          mailer.options['protocol.http.ssl_config.verify_mode'] = nil
-          op_log.options['protocol.http.ssl_config.verify_mode'] = nil
-          perf_mon.options['protocol.http.ssl_config.verify_mode'] = nil
-          res_log.options['protocol.http.ssl_config.verify_mode'] = nil
-          resourcem.options['protocol.http.ssl_config.verify_mode'] = nil
-          scheduler.options['protocol.http.ssl_config.verify_mode'] = nil
-          servicem.options['protocol.http.ssl_config.verify_mode'] = nil
-          userm.options['protocol.http.ssl_config.verify_mode'] = nil
+          sessionm.options['protocol.http.ssl_config.verify_mode']      = nil
+          envm.options['protocol.http.ssl_config.verify_mode']          = nil
+          packagem.options['protocol.http.ssl_config.verify_mode']      = nil
+          relocator.options['protocol.http.ssl_config.verify_mode']     = nil
+          devm.options['protocol.http.ssl_config.verify_mode']          = nil
+          networkm.options['protocol.http.ssl_config.verify_mode']      = nil
+          proc_info.options['protocol.http.ssl_config.verify_mode']     = nil
+          processm.options['protocol.http.ssl_config.verify_mode']      = nil
+          up2date.options['protocol.http.ssl_config.verify_mode']       = nil
+          support.options['protocol.http.ssl_config.verify_mode']       = nil
+          env_samplem.options['protocol.http.ssl_config.verify_mode']   = nil
+          alertm.options['protocol.http.ssl_config.verify_mode']        = nil
+          authm.options['protocol.http.ssl_config.verify_mode']         = nil
+          backupm.options['protocol.http.ssl_config.verify_mode']       = nil
+          computerm.options['protocol.http.ssl_config.verify_mode']     = nil
+          event_log.options['protocol.http.ssl_config.verify_mode']     = nil
+          server_group.options['protocol.http.ssl_config.verify_mode']  = nil
+          filer.options['protocol.http.ssl_config.verify_mode']         = nil
+          firewallm.options['protocol.http.ssl_config.verify_mode']     = nil
+          licensem.options['protocol.http.ssl_config.verify_mode']      = nil
+          mailer.options['protocol.http.ssl_config.verify_mode']        = nil
+          op_log.options['protocol.http.ssl_config.verify_mode']        = nil
+          perf_mon.options['protocol.http.ssl_config.verify_mode']      = nil
+          res_log.options['protocol.http.ssl_config.verify_mode']       = nil
+          resourcem.options['protocol.http.ssl_config.verify_mode']     = nil
+          scheduler.options['protocol.http.ssl_config.verify_mode']     = nil
+          servicem.options['protocol.http.ssl_config.verify_mode']      = nil
+          userm.options['protocol.http.ssl_config.verify_mode']         = nil
         end
       end
-  
+
       ##
       # Sets the wiredump device for all drivers.
       def setup_debug_mode(dev)
         if dev == true
           dev = STDERR
         end
-        
-        sessionm.wiredump_dev = dev
-        envm.wiredump_dev = dev
-        packagem.wiredump_dev = dev
-        relocator.wiredump_dev = dev
-        devm.wiredump_dev = dev
-        networkm.wiredump_dev = dev
-        proc_info.wiredump_dev = dev
-        processm.wiredump_dev = dev
-        up2date.wiredump_dev = dev
-        support.wiredump_dev = dev
-        env_samplem.wiredump_dev = dev
-        alertm.wiredump_dev = dev
-        authm.wiredump_dev = dev
-        backupm.wiredump_dev = dev
-        computerm.wiredump_dev = dev
-        event_log.wiredump_dev = dev
-        server_group.wiredump_dev = dev
-        filer.wiredump_dev = dev
-        firewallm.wiredump_dev = dev
-        licensem.wiredump_dev = dev
-        mailer.wiredump_dev = dev
-        op_log.wiredump_dev = dev
-        perf_mon.wiredump_dev = dev
-        res_log.wiredump_dev = dev
-        resourcem.wiredump_dev = dev
-        scheduler.wiredump_dev = dev
-        servicem.wiredump_dev = dev
-        userm.wiredump_dev = dev
+
+        sessionm.wiredump_dev       = dev
+        envm.wiredump_dev           = dev
+        packagem.wiredump_dev       = dev
+        relocator.wiredump_dev      = dev
+        devm.wiredump_dev           = dev
+        networkm.wiredump_dev       = dev
+        proc_info.wiredump_dev      = dev
+        processm.wiredump_dev       = dev
+        up2date.wiredump_dev        = dev
+        support.wiredump_dev        = dev
+        env_samplem.wiredump_dev    = dev
+        alertm.wiredump_dev         = dev
+        authm.wiredump_dev          = dev
+        backupm.wiredump_dev        = dev
+        computerm.wiredump_dev      = dev
+        event_log.wiredump_dev      = dev
+        server_group.wiredump_dev   = dev
+        filer.wiredump_dev          = dev
+        firewallm.wiredump_dev      = dev
+        licensem.wiredump_dev       = dev
+        mailer.wiredump_dev         = dev
+        op_log.wiredump_dev         = dev
+        perf_mon.wiredump_dev       = dev
+        res_log.wiredump_dev        = dev
+        resourcem.wiredump_dev      = dev
+        scheduler.wiredump_dev      = dev
+        servicem.wiredump_dev       = dev
+        userm.wiredump_dev          = dev
       end
 
       ##
@@ -386,9 +386,9 @@ module Virtuozzo
       #
       def establish_session
         login_opts = {
-          :name => Base64.encode64(@username).gsub("\n",''),
+          :name     => Base64.encode64(@username).gsub("\n",''),
           :password => Base64.encode64(@password).gsub("\n",''),
-          :realm => @realm
+          :realm    => @realm
         }
 
         resp = sessionm.login(login_opts)
@@ -402,34 +402,34 @@ module Virtuozzo
       # each driver in turn.
       #
       def setup_header_handler
-        sessionm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'sessionm')
-        envm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzaenvm')
-        packagem.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzapackagem')
-        relocator.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzarelocator')
-        devm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzadevm')
-        networkm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzanetworkm')
-        proc_info.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzaproc_info')
-        processm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzaprocessm')
-        up2date.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzaup2date')
-        support.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'vzasupport')
-        env_samplem.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'env_samplem')
-        alertm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'alertm')
-        authm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'authm')
-        backupm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'backupm')
-        computerm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'computerm')
-        event_log.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'event_log')
-        server_group.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'server_group')
-        filer.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'filer')
-        firewallm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'firewallm')
-        licensem.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'licensem')
-        mailer.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'mailer')
-        op_log.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'op_log')
-        perf_mon.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'perf_mon')
-        res_log.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'res_log')
-        resourcem.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'resourcem')
-        scheduler.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'scheduler')
-        servicem.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'servicem')
-        userm.headerhandler << HeaderHandler.new(:session => @session_id, :target => 'userm')
+        sessionm.headerhandler      << HeaderHandler.new(:session => @session_id, :target => 'sessionm')
+        envm.headerhandler          << HeaderHandler.new(:session => @session_id, :target => 'vzaenvm')
+        packagem.headerhandler      << HeaderHandler.new(:session => @session_id, :target => 'vzapackagem')
+        relocator.headerhandler     << HeaderHandler.new(:session => @session_id, :target => 'vzarelocator')
+        devm.headerhandler          << HeaderHandler.new(:session => @session_id, :target => 'vzadevm')
+        networkm.headerhandler      << HeaderHandler.new(:session => @session_id, :target => 'vzanetworkm')
+        proc_info.headerhandler     << HeaderHandler.new(:session => @session_id, :target => 'vzaproc_info')
+        processm.headerhandler      << HeaderHandler.new(:session => @session_id, :target => 'vzaprocessm')
+        up2date.headerhandler       << HeaderHandler.new(:session => @session_id, :target => 'vzaup2date')
+        support.headerhandler       << HeaderHandler.new(:session => @session_id, :target => 'vzasupport')
+        env_samplem.headerhandler   << HeaderHandler.new(:session => @session_id, :target => 'env_samplem')
+        alertm.headerhandler        << HeaderHandler.new(:session => @session_id, :target => 'alertm')
+        authm.headerhandler         << HeaderHandler.new(:session => @session_id, :target => 'authm')
+        backupm.headerhandler       << HeaderHandler.new(:session => @session_id, :target => 'backupm')
+        computerm.headerhandler     << HeaderHandler.new(:session => @session_id, :target => 'computerm')
+        event_log.headerhandler     << HeaderHandler.new(:session => @session_id, :target => 'event_log')
+        server_group.headerhandler  << HeaderHandler.new(:session => @session_id, :target => 'server_group')
+        filer.headerhandler         << HeaderHandler.new(:session => @session_id, :target => 'filer')
+        firewallm.headerhandler     << HeaderHandler.new(:session => @session_id, :target => 'firewallm')
+        licensem.headerhandler      << HeaderHandler.new(:session => @session_id, :target => 'licensem')
+        mailer.headerhandler        << HeaderHandler.new(:session => @session_id, :target => 'mailer')
+        op_log.headerhandler        << HeaderHandler.new(:session => @session_id, :target => 'op_log')
+        perf_mon.headerhandler      << HeaderHandler.new(:session => @session_id, :target => 'perf_mon')
+        res_log.headerhandler       << HeaderHandler.new(:session => @session_id, :target => 'res_log')
+        resourcem.headerhandler     << HeaderHandler.new(:session => @session_id, :target => 'resourcem')
+        scheduler.headerhandler     << HeaderHandler.new(:session => @session_id, :target => 'scheduler')
+        servicem.headerhandler      << HeaderHandler.new(:session => @session_id, :target => 'servicem')
+        userm.headerhandler         << HeaderHandler.new(:session => @session_id, :target => 'userm')
       end
     end
   end
