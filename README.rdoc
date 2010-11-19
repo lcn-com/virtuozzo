@@ -22,23 +22,23 @@ Github's gem server to your sources and then installing the latest development
 release gem.
 
   $ sudo gem sources -a http://gems.github.com/
-  $ sudo gem install plainprograms-virtuozzo
+  $ sudo gem install virtuozzo
 
 == SOURCE
 
 The virtuozzo git repo is available on Github, which can be browsed at:
 
-  http://github.com/plainprograms/virtuozzo/tree/
+  http://github.com/lcn-com/virtuozzo/tree/
 
 and cloned from:
 
-  git://github.com/plainprograms/virtuozzo.git
+  git://github.com/lcn-com/virtuozzo.git
 
 == LICENSE
 
 (The MIT License)
 
-Copyright (c) 2008 James Thompson <james@plainprograms.com>
+Copyright (c) 2008 LCN.com <dev@advantage-interactive.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

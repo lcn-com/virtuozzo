@@ -6,9 +6,9 @@ RUBYFORGE_PROJECT = "virtuozzo"
 
 Echoe.new(PROJECT, '0.7.0') do |p|
   p.description               = "Ruby library for Parallels Virtuozzo Agent's API"
-  p.url                       = "http://github.com/plainprograms/virtuozzo"
-  p.author                    = "James Thompson"
-  p.email                     = "james@plainprograms.com"
+  p.url                       = "http://github.com/lcn-com/virtuozzo"
+  p.author                    = "LCN.com"
+  p.email                     = "dev@advantage-interactive.com"
   p.project                   = RUBYFORGE_PROJECT
   p.ignore_pattern            = ["tmp/**/*", "script/**/*", "spec/**/*"]
   p.development_dependencies  = ["echoe ~>3.0"]
