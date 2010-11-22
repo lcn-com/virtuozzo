@@ -64,11 +64,6 @@ module Virtuozzo    # :nodoc:
         def initialize(endpoint_url = nil)
           endpoint_url ||= DefaultEndpointUrl
           super(endpoint_url, nil)
-
-          # Set longer timeout as clone request takes longer than the default 60 seconds
-          #
-          self.options["protocol.http.receive_timeout"] = 300
-
           self.mapping_registry         = Virtuozzo::SOAP::MappingRegistries::Relocator::EncodedRegistry
           self.literal_mapping_registry = Virtuozzo::SOAP::MappingRegistries::Relocator::LiteralRegistry
           init_methods
