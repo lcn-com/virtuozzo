@@ -45,9 +45,9 @@ module Virtuozzo
       def initialize(opts = {})
         @elem_options = {
           :session  => opts[:session] || nil,
-          :target   => opts[:target] || nil,
-          :cookie   => opts[:cookie] || nil,
-          :dst      => opts[:dst] || nil,
+          :target   => opts[:target]  || nil,
+          :cookie   => opts[:cookie]  || nil,
+          :dst      => opts[:dst]     || nil,
         }
 
         @attr_options = {
